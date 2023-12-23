@@ -34,10 +34,13 @@ public class AdventDay1Part2 {
         List<String> lines = readFile();
         int sum = lines.stream()
         .map((String line) -> {
+
             for (String digitString : digits.keySet()) {
                 line = line.replaceAll(digitString, digits.get(digitString));
             }
+
             line = line.replaceAll("[a-z]", "");
+            
             return line;
         })
         .mapToInt( (String line) -> {
